@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="333dp"
+        android:layout_centerInParent="true"
+        android:background="@color/primary" >
+
+        <com.autofit.et.lib.AutoFitEditText
+            android:id="@+id/rET"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/primary"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="@string/hint"
+            android:isScrollContainer="false"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="240"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="90sp" />
+    </FrameLayout>
+</RelativeLayout>

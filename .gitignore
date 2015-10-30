@@ -1,0 +1,27 @@
+.gradle
+/local.properties
+
+.DS_Store
+/build
+/captures
+s
+# Build files
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Eclipse specific
+.classpath
+.project
+proguard/
+
+# Android Studio (IntelliJ IDEA) specific
+*.iml
+*.ipr
+*.iws
+.idea/
