@@ -1,5 +1,5 @@
 # AutoFitEditText
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoFitEditText-green.svg?style=true)](https://android-arsenal.com/details/1/2728)
 
 <img src="https://github.com/ViksaaSkool/AutoFitEditText/blob/master/rpics/ic_launcher.png" width="96" height="96"/>
 
