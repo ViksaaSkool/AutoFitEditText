@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="hint">HINT</string>
+    <string name="letter_spacing">Letter Spacing:</string>
+    <string name="line_spacing">Line Spacing:</string>
 </resources>

@@ -11,15 +11,13 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="333dp"
-        android:layout_centerInParent="true"
-        android:background="@color/primary" >
+        android:layout_height="match_parent"
+        android:layout_above="@id/seek_bars_container">
 
         <com.autofit.et.lib.AutoFitEditText
             android:id="@+id/rET"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:background="@color/primary"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:gravity="center_vertical|center_horizontal"
@@ -27,8 +25,33 @@
             android:isScrollContainer="false"
             android:inputType="textMultiLine|textNoSuggestions"
             android:maxLength="240"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
             android:textSize="90sp" />
     </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/seek_bars_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/letter_spacing"
+                android:layout_gravity="center_vertical"/>
+            <SeekBar
+                android:id="@+id/letter_spacing_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/line_spacing"
+                android:layout_gravity="center_vertical"/>
+            <SeekBar
+                android:id="@+id/line_spacing_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+    </LinearLayout>
 </RelativeLayout>
