@@ -174,6 +174,7 @@ public class AutoFitEditText extends AppCompatEditText {
         super.setLineSpacing(add, mult);
         _spacingMult = mult;
         _spacingAdd = add;
+        reAdjust();
     }
 
     @Override
