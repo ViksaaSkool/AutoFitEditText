@@ -12,14 +12,12 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="333dp"
-        android:layout_centerInParent="true"
-        android:background="@color/primary" >
+        android:layout_centerInParent="true">
 
         <com.autofit.et.lib.AutoFitEditText
             android:id="@+id/rET"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:background="@color/primary"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:gravity="center_vertical|center_horizontal"
@@ -27,8 +25,6 @@
             android:isScrollContainer="false"
             android:inputType="textMultiLine|textNoSuggestions"
             android:maxLength="240"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
             android:textSize="90sp" />
     </FrameLayout>
 </RelativeLayout>

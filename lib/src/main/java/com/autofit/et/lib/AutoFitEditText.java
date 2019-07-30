@@ -12,12 +12,13 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.util.TypedValue;
-import android.widget.EditText;
+
+import androidx.appcompat.widget.AppCompatEditText;
 
 /**
  * Created by varsovski on 29-Oct-15.
  */
-public class AutoFitEditText extends EditText {
+public class AutoFitEditText extends AppCompatEditText {
     private static final int NO_LINE_LIMIT = -1;
     private final RectF _availableSpaceRect = new RectF();
     private final SparseIntArray _textCachedSizes = new SparseIntArray();
@@ -72,6 +73,7 @@ public class AutoFitEditText extends EditText {
             public int onTestSize(final int suggestedSize,
                                   final RectF availableSPace) {
                 paint.setTextSize(suggestedSize);
+                paint.setLetterSpacing(getLetterSpacing());
                 final String text = getText().toString();
                 final boolean singleline = getMaxLines() == 1;
                 if (singleline) {
@@ -174,6 +176,12 @@ public class AutoFitEditText extends EditText {
         _spacingAdd = add;
     }
 
+    @Override
+    public void setLetterSpacing(float letterSpacing) {
+        super.setLetterSpacing(letterSpacing);
+        reAdjust();
+    }
+
     /**
      * Set the lower text size limit and invalidate the view
      *
@@ -197,8 +205,10 @@ public class AutoFitEditText extends EditText {
             return;
         final int startSize =  Math.round(_minTextSize);
         final int heightLimit = getMeasuredHeight()
-                - getCompoundPaddingBottom() - getCompoundPaddingTop();
-        _widthLimit = getMeasuredWidth() - getCompoundPaddingLeft()
+                - getCompoundPaddingBottom()
+                - getCompoundPaddingTop();
+        _widthLimit = getMeasuredWidth()
+                - getCompoundPaddingLeft()
                 - getCompoundPaddingRight();
         if (_widthLimit <= 0)
             return;

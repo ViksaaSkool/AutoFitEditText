@@ -1,36 +1,32 @@
 package com.viksaa.autofit.et;
 
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.autofit.et.lib.AutoFitEditText;
 import com.autofit.et.lib.AutoFitEditTextUtil;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolbar)
-    Toolbar mToolbar;
-    @Bind(R.id.rET)
-    AutoFitEditText mAutoFitEditText;
-    @Bind(R.id.root)
-    CoordinatorLayout mRootView;
+    private Toolbar mToolbar;
+    private AutoFitEditText mAutoFitEditText;
+    private CoordinatorLayout mRootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
+        mToolbar = findViewById(R.id.toolbar);
+        mAutoFitEditText = findViewById(R.id.rET);
+        mRootView = findViewById(R.id.root);
 
         initAutoFitEditText();
-
     }
 
 
@@ -41,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
         mAutoFitEditText.setFocusable(true);
         mAutoFitEditText.setEnableSizeCache(false);
         //might cause crash on some devices
-        mAutoFitEditText.setMovementMethod(null);
+//        mAutoFitEditText.setMovementMethod(null);
         // can be added after layout inflation;
         mAutoFitEditText.setMaxHeight(330);
         //don't forget to add min text size programmatically
         mAutoFitEditText.setMinTextSize(60f);
+        mAutoFitEditText.setLetterSpacing(1f);
 
         AutoFitEditTextUtil.setNormalization(this, mRootView, mAutoFitEditText);
     }
